@@ -132,17 +132,18 @@ h3{
   .asideElements, .logo {
     display: block;
     margin: 0;
-    padding: 10px;
+    padding: 10px 10px;
     color: white;
     text-decoration: none;
     border-bottom: 1px solid white;
-    transition: background-color 0.3s ease-out;
+    transition: background-color 0.3s ease-out, border-bottom 0.5s ease-out;
         padding: 15px 15px;
     text-align: center;
   }
   
   .asideElements:hover {
     background-color: #555;
+    border-bottom: 5px solid white;
   }
   
   a {
@@ -159,7 +160,7 @@ h3{
   
   .asideLink{
     font-size: 1.5em;
-
+text-decoration: none;
     color:whitesmoke;
   }
   .asideElements:last-child {
@@ -175,3 +176,26 @@ h3{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
   
+.separatorAside{
+  width: 1%;
+    height: 85%;
+    background-color:whitesmoke;
+    position: fixed;
+  top: 14.5%;
+}
+.cover {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+
+

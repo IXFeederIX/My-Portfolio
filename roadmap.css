@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Kanit", Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+.text-header{
+    font-size: 3em;
+    font-weight: 800;
+text-align: center;
+
+}
+.description2{
+    font-size: 1em;
+    padding: 10px 10px;
+
+text-align: center;
+    line-height: 1.5;
+}
+.beat {
+
+    animation: beat 2s ease-in-out infinite;
+  }
+  
+  @keyframes beatrotation {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(180deg);
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+  
+  .beatRotate {
+    animation: beatrotation 2s ease-in-out infinite;
+    transform-origin: center; /* Add this line */
+  }
+  @keyframes beat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .img {
+    border-bottom: 5px solid black;
+    width: 35%;
+    margin-bottom: 0;
+    margin-left: 1em;
+
+  }
+  .img2{
+    border-bottom: 5px solid black;
+    width: 35%;
+    margin-bottom: 0;
+    margin-left: 1em;
+  
+  }
+  .hover{
+
+    border-radius: 25px;
+    
+  }
+  .reactF:hover{
+    background-color: #9ceaff;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+  }
+
+
+
+  
+  .html:hover{
+    background-color: #E34C26;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+  }
+  
+  .css:hover{
+    background-color: #2965F1;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+  }
+  
+  .JS:hover{
+    background-color: #F7DF1E;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+  }
+  
+  .pythonL:hover{
+    background: linear-gradient(to bottom right, rgba(0, 116, 217, 0.8), rgba(255, 220, 0, 0.8));
+    color: #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+  }
+  
+  .cplus:hover{
+    background: linear-gradient(to bottom right, #ADD8E6, #0074D9);
+    color: #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+  }
+  .img-fcc{
+  z-index: 1;
+  position: relative;
+  margin: 2em;
+  left: 15%;
+  animation-name: float;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  .comment{
+    font-size: 1.5em;
+  }
+h1, h2, h3, h4, h5 {
+  
+    position: relative;
+    text-align: center;
+    font-size: 3em;
+    border-bottom: 5px solid black;
+  padding: 25px;
+    margin: 5em 5em;
+    animation: pulse 2s ease-in-out 1;
+    animation-fill-mode: forwards; /* Keep the final state of the animation */
+  }
+  h2{
+    margin:3em !important;
+  }
+ section{
+    margin: 5em;
+ }
+ figure {
+    position: relative;
+    width: 100%;
+    transform: skew(-10deg);
+    
+  }
+  
+  .tree {
+    position: relative;
+    left: 7%;
+    box-shadow: 10px 0 20px rgba(0,0,0,0.5);
+    width: 80%;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+ .guide-text{
+    font-size: 1.5em;
+    text-align: center;
+ }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      margin: 0;
+    }
+  }
+#particles-js{
+    z-index:0;
+ position: fixed;
+ width: 100%;
+ opacity: 1;
+ height: 100%;
+ top: 0%;
+}
+.dev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 2em auto;
+    max-width: 1000px;
+  }
+  .position2{
+    position: relative;
+    left: 30%;
+  }
+   .position{
+    position: relative;
+    left: 25%;
+  }
+  main{
+    border-bottom: 5px solid black;
+    margin: 5em;
+  }
+  figcaption{
+    text-align: center;
+    font-size: 1.5em;
+  }
+  .go-back {
+    width: 10%;
+    position: absolute;
+    z-index: 1;
+    background-color: transparent;
+    border-radius: 10px;
+    margin: 1em;
+    font-family: Kanit, sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    height: 50px;
+    padding: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Add this line to vertically center the text */
+  justify-content: center; 
+    transition: background-color 0.3s ease-out, border-bottom 0.3s ease-out; /* Add transition for background-color and border-bottom */
+  }
+  
+  .go-back > a {
+    color: black;
+
+
+    }
+  
+  .go-back:hover {
+    background-color: #f2f2f2; /* Change the background color to a lighter shade on hover */
+  }
+  
+  .go-back:active {
+    background-color: #ebebeb; /* Change the background color when clicked */
+  }
+  

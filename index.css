@@ -407,7 +407,14 @@ background-color: black;
         left: 35%;  
         white-space: nowrap;
     }
-
+#particles-js{
+    z-index:0;
+ position: fixed;
+ width: 100%;
+ opacity: 0;
+ height: 100%;
+ top: 0%;
+}
 .float{
   animation: float 3s ease-in-out infinite;
 }

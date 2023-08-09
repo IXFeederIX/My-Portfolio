@@ -1,12 +1,32 @@
 
+
 const seccion = document.querySelector(".seccion")
 const footer = document.getElementsByTagName("footer")[0];  
-function createPortfolio(){
+const button = document.querySelector(".start");
+const body = document.querySelector('body');
+const section = document.querySelector(".section")
+const loading = document.querySelector(".loading")
+const bodyStyle = window.getComputedStyle(body, '::before');
+const socialMedia = document.querySelector(".social-media")
+const particles = document.getElementById("particles-js")
+const welcome = document.querySelector(".welcome")
+const tip = document.querySelector(".tip")
+const ricky = document.querySelector(".ricky")
+const dialogo = document.querySelector(".dialogo")
 
+const rickyeyeL = document.querySelector(".ricky-eyeL")
+const rickyeyeR = document.querySelector(".ricky-eyeR")
+function createPortfolio(){
+let hasBeenBefore;
+hasBeenBefore = localStorage.setItem("hereBefore", "yes")
     const aside = document.createElement("aside");
     
     function createAside(){
+      const separatorAside = document.createElement("div")
+     aside.appendChild(separatorAside)
+     separatorAside.classList.add("separatorAside")
       const arrIcon = [{icon:"fa-solid fa-bars" }]
+
      const logo = document.createElement("div")
      const logoIcon = document.createElement("i")
      const portfolio = document.createElement("p")
@@ -31,13 +51,13 @@ function createPortfolio(){
         { icon: "far fa-question-circle" }
       ];
       
-      const asideText = [{text: "Inicio"},
-      {text: "Proyectos"},
-      {text: "Roadmap"},
-      {text: "Habilidades"},
-      {text: "Certificaciones"},
-      {text: "Redes Sociales / Contacto"},
-      {text: "Acerca de M1n0z"}];
+      const asideText = [{text: "Blog", link:"Blog.html"},
+      {text: "Proyectos", link: "projectos.html"},
+      {text: "Roadmap", link: "roadmap.html"},
+      {text: "Habilidades", link: "skills.html"},
+      {text: "Certificaciones", link:"certificaciones.html"},
+      {text: "Redes Sociales / Contacto", link: "social.html"},
+      {text: "Acerca de M1n0z", link: "about.html"}];
       
       const asideMenu = document.createElement("ul");
       aside.appendChild(asideMenu)
@@ -49,6 +69,7 @@ function createPortfolio(){
         icon.classList.add("asideIcon")
         li.appendChild(icon);
         a.textContent = " " + asideText[i].text;
+        a.href = asideText[i].link;
         a.classList.add("asideLink")
         li.classList.add("asideElements");
         li.appendChild(a);
@@ -185,22 +206,11 @@ window.addEventListener('scroll', function() {
 ///Estructura principal
 
 
-const button = document.querySelector(".start");
-const body = document.querySelector('body');
-const section = document.querySelector(".section")
-const loading = document.querySelector(".loading")
-const bodyStyle = window.getComputedStyle(body, '::before');
-const socialMedia = document.querySelector(".social-media")
 
-const welcome = document.querySelector(".welcome")
-const tip = document.querySelector(".tip")
-const ricky = document.querySelector(".ricky")
-const dialogo = document.querySelector(".dialogo")
 let usedNumbers = [];
-function rickystart(){
 let positive = false;
-const rickyeyeL = document.querySelector(".ricky-eyeL")
-const rickyeyeR = document.querySelector(".ricky-eyeR")
+function rickystart(){
+
 
 //// respuestas de M1n0z dependiendo de la opcion
 
@@ -392,6 +402,7 @@ body.style.setProperty('--after-background-display', 'none');
 document.body.style.backgroundImage = "none"
 document.body.style.backgroundColor = "whitesmoke"
 button.style.display = "none"
+particles.style.opacity = 0.5
 loading.style.display="block"
 section.style.display = "none"
 socialMedia.style.transform = 'translate(-200px, -70px)';
@@ -437,6 +448,7 @@ setTimeout(() => {
   setTimeout(() => {
       ricky.classList.add("float")
       rickystart()
+ 
   }, 1000);
   }, 1500);
 
@@ -444,3 +456,21 @@ setTimeout(() => {
 }, 1000);
 }, 7000);
 });
+function hasBeen() {
+  if (localStorage.getItem('hereBefore') === 'yes') {
+    createPortfolio();
+    button.style.display = "none"
+    section.style.display = "none"
+    particles.style.opacity = 0.5
+    document.body.style.backgroundImage = "none"
+    body.style.setProperty('--before-background-image', 'none');
+body.style.setProperty('--before-position', "relative");
+body.style.setProperty('--after-background-display', 'none');
+document.body.style.backgroundColor = "whitesmoke"
+socialMedia.style.display = "none";
+  } else {
+ 
+  }
+}
+
+hasBeen();
