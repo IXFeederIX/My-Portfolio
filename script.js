@@ -1,5 +1,4 @@
 
-
 const seccion = document.querySelector(".seccion")
 const footer = document.getElementsByTagName("footer")[0];  
 const button = document.querySelector(".start");
@@ -20,8 +19,11 @@ function createPortfolio(){
 let hasBeenBefore;
 hasBeenBefore = localStorage.setItem("hereBefore", "yes")
     const aside = document.createElement("aside");
+   
     
+
     function createAside(){
+
       const separatorAside = document.createElement("div")
      aside.appendChild(separatorAside)
      separatorAside.classList.add("separatorAside")
@@ -56,8 +58,8 @@ hasBeenBefore = localStorage.setItem("hereBefore", "yes")
       {text: "Roadmap", link: "roadmap.html"},
       {text: "Habilidades", link: "skills.html"},
       {text: "Certificaciones", link:"certificaciones.html"},
-      {text: "Redes Sociales / Contacto", link: "social.html"},
-      {text: "Acerca de M1n0z", link: "about.html"}];
+      {text: "Acerca de", link: "about.html"},
+      {text: "Contactos", link: "cotizar.html"}];
       
       const asideMenu = document.createElement("ul");
       aside.appendChild(asideMenu)
@@ -73,12 +75,17 @@ hasBeenBefore = localStorage.setItem("hereBefore", "yes")
         a.classList.add("asideLink")
         li.classList.add("asideElements");
         li.appendChild(a);
+
         asideMenu.appendChild(li);
+
       }
       
       return asideMenu;
+ 
+
+
     }
-    
+ 
     aside.style.opacity = "0";
  
     aside.style.transition = "opacity 0.3s ease-in-out, width 0.3s ease-in-out";
@@ -158,17 +165,25 @@ pfp.addEventListener("mouseover", () => {
 
                  ///// 
                    typedScript.onload = function() {
-                    var typed2 = new Typed('.intro', {
+                  let typed2 = new Typed('.intro', {
                         strings: ["Hola, Soy Omar Rivero y este es mi Portfolio."],
                         typeSpeed: 10,
-                        loop: false
-                      });
+                        loop: false,
+  onComplete: function(self) {
+    self.cursorChar = ""; // Set the cursor character to an empty string
+  }
+});
+                  
                     
-    var typed = new Typed('.welcomeMain', {
-      strings: ["Bienvenido, Usuario."],
-      typeSpeed: 30,
-      loop: false
-    });
+   let typed = new Typed('.welcomeMain', {
+  strings: ["Bienvenido, Usuario."],
+  typeSpeed: 30,
+  loop: false,
+  onComplete: function(self) {
+    self.cursorChar = ""; // Set the cursor character to an empty string
+  }
+});
+
   };
                  document.body.style.overflowY = "scroll";
                 document.body.style.minHeight = "100vh"
@@ -192,12 +207,12 @@ window.addEventListener('scroll', function() {
     
     aside.addEventListener("mouseover", () => {
       aside.style.opacity = "1";
-           aside.style.width = "20%";
+
     });
     
     aside.addEventListener("mouseout", () => {
       aside.style.opacity = "0";
-      aside.style.width = "10%";
+
 
     });
 
@@ -474,3 +489,4 @@ socialMedia.style.display = "none";
 }
 
 hasBeen();
+
