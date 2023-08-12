@@ -1,12 +1,10 @@
 
 const seccion = document.querySelector(".seccion")
 const footer = document.getElementsByTagName("footer")[0];  
-const button = document.querySelector(".start");
 const body = document.querySelector('body');
 const section = document.querySelector(".section")
 const loading = document.querySelector(".loading")
 const bodyStyle = window.getComputedStyle(body, '::before');
-const socialMedia = document.querySelector(".social-media")
 const particles = document.getElementById("particles-js")
 const welcome = document.querySelector(".welcome")
 const tip = document.querySelector(".tip")
@@ -18,9 +16,9 @@ const rickyeyeR = document.querySelector(".ricky-eyeR")
 function createPortfolio(){
 let hasBeenBefore;
 hasBeenBefore = localStorage.setItem("hereBefore", "yes")
-    const aside = document.createElement("aside");
    
-    
+ 
+     const aside = document.createElement("aside");
 
     function createAside(){
 
@@ -109,6 +107,9 @@ hasBeenBefore = localStorage.setItem("hereBefore", "yes")
             msg.innerHTML = "Pie de Pagina Añadido"
             setTimeout(() => {
                 msg.innerHTML = "Cargando Introduccion"
+                  setTimeout(() =>{
+                  msg.style.display = "none"
+                }, 3000)
                 const container = document.createElement("div")
            container.classList.add("container")
            const pfpContainer =document.createElement("div")
@@ -131,29 +132,20 @@ hasBeenBefore = localStorage.setItem("hereBefore", "yes")
                 intro.classList.add("intro")
                 document.body.appendChild(container)
         
-pfp.addEventListener("mouseover", () => {
-    pfp.classList.add("fadeOut");
-  
-    setTimeout(() => {
-      pfp.style.transition = "all 0.5s ease-in-out";
-      pfp.src = "id2.jpg";
-      pfp.classList.remove("fadeOut");
-    }, 1000);
-  });
-  
-  pfp.addEventListener("mouseout", () => {
-    setTimeout(() => {
-        pfp.style.transition = "all 0.5s ease-in-out";
-        pfp.classList.add("fadeOut");
-       setTimeout(() => {
-        pfp.src = "id1.png";
-        pfp.classList.remove("fadeOut")
-       }, 1000);
 
-    }, 1000);
+let images = ["id1.png", "id2.jpg"];
+let currentIndex = 0;
 
-   
-  });
+setInterval(() => {
+  pfp.classList.add("fadeOut");
+
+  setTimeout(() => {
+    pfp.style.transition = "all 0.5s ease-in-out";
+    pfp.src = images[currentIndex];
+    pfp.classList.remove("fadeOut");
+    currentIndex = (currentIndex + 1) % images.length;
+  }, 1000);
+}, 3000);
                  const welcome2 = document.createElement("p")
                  welcome2.classList.add("welcomeMain")
                  document.body.appendChild(welcome2)
@@ -192,9 +184,12 @@ pfp.addEventListener("mouseover", () => {
 window.addEventListener('scroll', function() {
     if (window.scrollY > 0 && document.documentElement.scrollTop < (document.documentElement.scrollHeight - document.documentElement.clientHeight)) {
       footer.style.opacity = "0";
+  
     } else {
       footer.style.opacity = "1";
+ 
     }
+
   });
                  document.body.appendChild(separator)
           
@@ -205,11 +200,13 @@ window.addEventListener('scroll', function() {
         }, 1500);
     }, 2000);
     
-    aside.addEventListener("mouseover", () => {
-      aside.style.opacity = "1";
+aside.addEventListener("mouseover", function() {
 
-    });
-    
+  
+    aside.style.opacity = "1";
+  
+});
+
     aside.addEventListener("mouseout", () => {
       aside.style.opacity = "0";
 
@@ -409,18 +406,11 @@ eyes()
 }
 
 
-button.addEventListener("click", () => {
-document.body.style.transition = "1s all"
-body.style.setProperty('--before-background-image', 'none');
-body.style.setProperty('--before-position', "relative");
-body.style.setProperty('--after-background-display', 'none');
-document.body.style.backgroundImage = "none"
-document.body.style.backgroundColor = "whitesmoke"
-button.style.display = "none"
+function start(){
+  document.body.style.transition = "1s all"
 particles.style.opacity = 0.5
 loading.style.display="block"
-section.style.display = "none"
-socialMedia.style.transform = 'translate(-200px, -70px)';
+
 
 let index =Math.floor(Math.random() * 8);
 let tips = [{tip:"Cuando veas el Portfolio recuerda dar tu opinion :)"},
@@ -443,12 +433,9 @@ loading.classList.add('fadeOut');
 setTimeout(() => {
 loading.style.display = 'none';
 welcome.classList.add("fadeIn")
-socialMedia.classList.add('move');
+
 seccion.style.display = "block"
 setTimeout(() => {
-  socialMedia.style.transform = "translate(-200px, 120px)";
-  socialMedia.classList.remove("move")    
-  socialMedia.classList.add("fadeOut")
 
   welcome.classList.add("fadeOut")
   
@@ -456,7 +443,6 @@ setTimeout(() => {
 
    
 
-      socialMedia.style.display = "none"
   welcome.style.display = "none"
 
   ricky.style.display="block"
@@ -470,21 +456,20 @@ setTimeout(() => {
 }, 2500);
 }, 1000);
 }, 7000);
-});
+}
+
+
+
 function hasBeen() {
   if (localStorage.getItem('hereBefore') === 'yes') {
     createPortfolio();
-    button.style.display = "none"
     section.style.display = "none"
     particles.style.opacity = 0.5
-    document.body.style.backgroundImage = "none"
-    body.style.setProperty('--before-background-image', 'none');
-body.style.setProperty('--before-position', "relative");
-body.style.setProperty('--after-background-display', 'none');
+
 document.body.style.backgroundColor = "whitesmoke"
-socialMedia.style.display = "none";
+
   } else {
- 
+ start();
   }
 }
 

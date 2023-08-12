@@ -19,6 +19,7 @@ text-align: center;
 text-align: center;
     line-height: 1.5;
 }
+img
 .beat {
 
     animation: beat 2s ease-in-out infinite;
@@ -70,6 +71,11 @@ text-align: center;
     border-radius: 25px;
     
   }
+  .ffcamp, .cisco, .guide {
+    display: flex;
+    flex-direction: column;
+
+  }
   .reactF:hover{
     background-color: #9ceaff;
     color: #333;
@@ -116,9 +122,9 @@ text-align: center;
   }
   .img-fcc{
   z-index: 1;
-  position: relative;
+
   margin: 2em;
-  left: 15%;
+
   animation-name: float;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -126,21 +132,21 @@ text-align: center;
   }
   .comment{
     font-size: 1.5em;
+    text-align: center;
   }
 h1, h2, h3, h4, h5 {
+display: flex;
+justify-content: center;
+align-items: center;
   
-    position: relative;
-    text-align: center;
-    font-size: 3em;
+  font-size: 3em;
     border-bottom: 5px solid black;
   padding: 25px;
     margin: 5em 5em;
     animation: pulse 2s ease-in-out 1;
     animation-fill-mode: forwards; /* Keep the final state of the animation */
   }
-  h2{
-    margin:3em !important;
-  }
+  
  section{
     margin: 5em;
  }
@@ -152,10 +158,14 @@ h1, h2, h3, h4, h5 {
   }
   
   .tree {
-    position: relative;
-    left: 7%;
+
+display: flex;
+justify-content: center;
+align-items: center;
     box-shadow: 10px 0 20px rgba(0,0,0,0.5);
-    width: 80%;
+    width: 95%;
+
+
     animation-name: float;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -254,4 +264,60 @@ h1, h2, h3, h4, h5 {
   .go-back:active {
     background-color: #ebebeb; /* Change the background color when clicked */
   }
-  
+  @media (max-width: 960px){
+.guide, .learn, .cisco, .about, section, main{
+  margin: 0 auto;
+  width: 100%;
+  }
+h1,h2, h3, h4, h5{
+margin: 0 auto;
+width: 100%;
+text-align: center;
+font-size: 2em;
+padding: 0;
+} 
+.tree{
+  width: 80%;
+}
+.dev{
+  width: 100%;
+
+  margin: 0 auto;
+flex-direction: column;
+}
+.dev > div {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  margin-bottom: 30px;
+    justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.dev > div > img {
+  left: 0;
+  width: 20%;
+}
+.dev > div > .text-header{
+
+display: none;
+
+}
+.dev > div > img{
+  width: 20%;
+  left: 0;
+  margin: 20px;
+}
+.go-back{
+  top: 0;
+width: 10%;
+height: 40px;
+margin: 0 auto;
+padding: 0;
+}
+.guide-text{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+}

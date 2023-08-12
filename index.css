@@ -16,108 +16,7 @@
       position: relative;
 
       }
-      
-      body::before,
-      body::after {
-        content: "";
-        position:  var(--before-position, absolute);
-        top: 0;
-        bottom: 0;
-        width: 50%;
-      }
-      
-      body::before {
-        content: "";
-        position: var(--before-position, absolute);
-        top: 0;
-        bottom: 0;
-        width: 50%;
-        background-image: var(--before-background-image, url(0.jpg));
-        background-size: cover;
-        background-position: center;
-        animation-name: backgroundTransition;
-        animation-duration: 40s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-      }
-      
-      @keyframes backgroundTransition {
-        0% {
-          background-image: var(--before-background-image, url(0.jpg));
-        }
-        15%{
-            background-image: var(--before-background-image, url(5.jpg));  
-        }
-        25% {
-          background-image: var(--before-background-image, url(1.jpg));
-        }
-        45% {
-            background-image: var(--before-background-image, url(6.jpg));
-          }
-        50% {
-          background-image: var(--before-background-image, url(2.jpg));
-        }
-        75% {
-          background-image: var(--before-background-image, url(3.jpg));
-        }
-        100% {
-          background-image: var(--before-background-image, url(4.jpg));
-        }
-      }
-      body::after {
-        right: 0;
-        display: var(--after-background-display, "block");
-        background-color: black;
-        border-left: 5px solid whitesmoke;
-
-          }
-          .social-media{
-            position: relative;
-            display: flex;
-            top: 70%;
-            left: 50%;
-            text-align: center;
-            z-index: 2;
-            flex-direction: row;
-            color: black;
-            font-size: 3em;
-             width: 30%;
-            list-style-type: none;
-            background-color: whitesmoke;
-            clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 50%, calc(100% - 40px) 100%, 0 100%);
-          }
-    li{
-margin-left: 30px;
-
-
-    }
-    a{
-        color:black;
-    }
-      @keyframes fadeInOut {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-   
-    @keyframes fade {
-        0% {
-            opacity: 0;
-
-        }
-        50%{
-            opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-    }
+  
    
     
       @keyframes slideInFromLeft {
@@ -434,3 +333,4 @@ background-color: black;
 
 
 }
+
