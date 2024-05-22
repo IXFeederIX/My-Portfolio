@@ -52,12 +52,11 @@ hasBeenBefore = localStorage.setItem("hereBefore", "yes")
       ];
       
       const asideText = [{text: "Blog", link:"Blog.html"},
-      {text: "Proyectos", link: "projectos.html"},
+      {text: "Proyectos", link: "https://github.com/IXFeederIX?tab=repositories"},
       {text: "Roadmap", link: "roadmap.html"},
-      {text: "Habilidades", link: "skills.html"},
       {text: "Certificaciones", link:"certificaciones.html"},
       {text: "Acerca de", link: "about.html"},
-      {text: "Contactos", link: "cotizar.html"}];
+      {text: "Contactos", link: "https://bit.ly/omarriv08"}];
       
       const asideMenu = document.createElement("ul");
       aside.appendChild(asideMenu)
